@@ -144,6 +144,7 @@ nav a {
     display: block;
     border-top-left-radius: 6px; 
     border-bottom-left-radius: 6px; 
+   
 }
 
 
@@ -234,13 +235,12 @@ video:focus {
 
 .home-container1 { 
     width: 50%; 
-    height: 300px; 
     background: lightblue; 
     float: left;
     padding: 20px; 
     align-content: center;
     text-align: center;
-    margin-top: 20px; 
+    margin-top: 100px; 
     margin-left: 10px;
     margin-bottom: 20px; 
 }
@@ -248,7 +248,7 @@ video:focus {
 .home-container2{ 
     width: 40%;
     float: right;
-    background: green;
+    
     
 } 
 .home-container1 h4{ 
@@ -307,9 +307,9 @@ video:focus {
     display: none;
     background: black; 
     position: absolute; 
-    
-    
 }
+
+
 
 .image-container { 
     width: 75%; 
@@ -379,7 +379,7 @@ video:focus {
 }
 
 /* gallery second row */ 
-#images-wrapper {    
+.images-wrapper {    
     line-height: 0;       
      -webkit-column-count: 5;    
      -webkit-column-gap: 0px;    
@@ -389,13 +389,13 @@ video:focus {
       column-gap: 0px;    
       margin: 0 auto;
  }  
- #images-wrapper img {    
+ .images-wrapper img {    
     width: 100% !important;    
     height: auto !important;  
     padding: 10px; 
     background: white;
  }  
- #images-wrapper{    
+ .images-wrapper{    
     padding-top: 20px;
     display:inline-block;    
     margin-right: auto;    
@@ -409,9 +409,10 @@ video:focus {
     position: fixed; 
     width: 50px; 
     height: 50px; 
-    background: black; 
-    color: white; 
-    border: none;
+    background: white;
+    color: black; 
+    
+    border: 1px solid black;
 }
 .gallery .image-slider-container{ 
     width: 100%; 
@@ -439,13 +440,14 @@ video:focus {
 }
 
 .gallery button { 
-    width: 20px; 
-    height: 20px; 
+    width: 12px; 
+    height: 12px; 
     border-radius: 10px; 
+    cursor: pointer;
 }
 
 #button-container{ 
-    width: 100px;
+    width: 200px;
     margin: 0 auto; 
     padding: 10px;
 }
@@ -545,6 +547,10 @@ video:focus {
     margin-left: 90px;
 }
 
+.gallery .small-img{ 
+    width: 50%; 
+}
+
 .gallery .small-img-row{ 
     display: flex;
     background: white;
@@ -564,9 +570,13 @@ video:focus {
     display: block;
     border-top-left-radius: 6px; 
     border-bottom-left-radius: 6px; 
+  
+    
 }
 
-
+.gallery .smallerImg img{ 
+    width: 83%;
+}
 
 .gallery #font-awesome li { 
     display: block; 
@@ -582,7 +592,7 @@ video:focus {
     display: none;
     position: absolute; 
     background: black;
-    top: 2500px; 
+    top: 3500px; 
     padding: 10px;
     width:100%;
     
@@ -614,17 +624,50 @@ video:focus {
 
 #about-intro { 
     width: 100%; 
-    height: 600px; 
+    height: 400px; 
     background-color: whitesmoke;
+
 } 
+.about #boxcontainer { 
+    width: 1200px; 
+    background: lightblue; 
+    display: block; 
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+
+.about .box{ 
+    width: 33.33%; 
+    display: block; 
+    float: left;
+    padding: 20px; 
+    text-align: center;
+}
+
+.about .box h3{ 
+    font-size: 24px;
+    font-weight: 200; 
+    margin-bottom: 10px;
+}
+
+.about .box p{ 
+    font-size: 15px; 
+    line-height: 25px;
+    font-style: italic;
+}
 
 #about-intro-container{ 
     max-width: 1200px; 
-    height: 500px; 
-    background: green;
     margin: 0 auto;
     padding-top: 20px; 
+} 
+
+#about-intro-container h1{ 
+    font-weight: 200;
+    margin-bottom: 20px;
 }
+
 
 #jose{ 
     width: 1200px; 
@@ -633,7 +676,7 @@ video:focus {
     display: block;       
 }
    
-   .jose-container1 { 
+  .jose-container1 { 
        width: 50%; 
        height: 300px; 
        background: lightblue; 
@@ -641,9 +684,13 @@ video:focus {
        padding: 20px; 
        align-content: center;
        text-align: center;
-       margin-top: 20px; 
+       margin-top: 200px; 
        margin-left: 10px;
        margin-bottom: 20px; 
+   }
+
+   .jose-container1 #font-awesome{ 
+       margin-top: 20px;
    }
    
    .jose-container2{ 
@@ -662,6 +709,7 @@ video:focus {
        line-height: 22px; 
        font-size: 15px; 
    }
+
 
 
 /* /////////////////////////////////////////////// */
@@ -872,15 +920,19 @@ fieldset{
 
 .setAppointments { 
     width: 100%; 
-    height: 100vh; 
+     
     background: beige;
     padding: 20px; 
     font-weight: 200px;
 } 
 
-#disclaimer { 
+.disclaimer { 
     color: grey;
     font-style: italic;
+    text-align: center; 
+    display: block; 
+    margin-top: 10px;
+    font-size: 0.875em;
 } 
 
 .setAppointments{
@@ -928,11 +980,36 @@ table th{
 .contact .wrapper { 
     background: white; 
     width: 100%;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 60px;
     
 } 
-.form-contact{ 
-    padding: 30px;
-} 
+#contact-form-container{ 
+    width: 940px; 
+    background: lightblue;
+    border-radius: 6px; 
+    border: solid 1px black;
+    
+    margin: 0 auto; 
+    display: block;
+    overflow: hidden;
+    
+}
+.contact aside{ 
+    float: right;
+    display: block; 
+    margin-right: 100px;
+}
+
+.contact main { 
+    float: left; 
+    display:block; 
+    width: 50%; 
+    height: 200px; 
+    margin-left: 100px;
+    margin-top: 150px;
+}
 
 .contact form { 
     width: 200px; 
@@ -944,6 +1021,12 @@ table th{
     display: block; 
 
 } 
+
+.contact p{ 
+    line-height: 35px; 
+    font-size: 1.2em;
+    font-style: italic;
+}
 
 .contact .field{
    width: 100%; 
@@ -1021,7 +1104,13 @@ table th{
     margin-top: 10px;
 } 
 
-
+.appointment h3{ 
+    font-size: 15px; 
+    font-style: italic;
+    color: grey;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
 
 .appt-form{ 
     width: 200px; 
@@ -1052,4 +1141,31 @@ table th{
     display: block; 
     clear: right; 
     margin-top: 100px;
+} 
+
+
+#thanks { 
+    width: 940px; 
+    border-radius: 6px; 
+    background-color: whitesmoke;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+} 
+#thanks h1 { 
+    margin-bottom: 20px; 
+    font-weight: 300px;
+} 
+
+
+#thanks h2 { 
+    margin-bottom: 20px; 
+    font-weight: 300px;
+} 
+
+#thanks p{ 
+    font-size: 15px;
+    font-style: italic; 
+    line-height:  15px;
+    margin-bottom: 20px; 
 }

@@ -10,6 +10,7 @@ $FirstName="";
 $LastName=""; 
 $UserName=""; 
 $Email=""; 
+$Details=""; 
 $errors= array(); 
 $success= 'You are now logged in!'; 
 
@@ -25,6 +26,8 @@ if(isset($_POST['appt'])){
     $LastName= mysqli_real_escape_string($db, $_POST['LastName']);
     $UserName= mysqli_real_escape_string($db, $_POST['UserName']);
     $Email= mysqli_real_escape_string($db, $_POST['Email']);
+    $Details= mysqli_real_escape_string($db, $_POST['Details']);
+    $Date= mysqli_real_escape_string($db, $_POST['Date']);
    
     //if's to check if errors in the form were made. pulling error messages from $erros array 
     if(empty($FirstName)){ 
@@ -36,18 +39,25 @@ if(isset($_POST['appt'])){
     }//end if
 
     if(empty($UserName)){ 
-        array_push($errors, 'Last Name is Required'); 
+        array_push($errors, 'User Name is Required'); 
     }//end if
 
     if(empty($Email)){ 
         array_push($errors, 'Email is Required'); 
     }//end if
 
-   
+    if(empty($Details)){ 
+        array_push($errors, 'Details are Required'); 
+    }//end if
+
+    if(empty($Date)){ 
+        array_push($errors, 'Date is Required'); 
+    }//end if
+    
   
 
     //checker to see if username is already been chosen
-    $user_check_query="SELECT * FROM BonkaiApp WHERE UserName='$UserName' OR Email='$Email' LIMIT 1 "; 
+    $user_check_query="SELECT * FROM BonkaiAppt WHERE UserName='$UserName' OR Email='$Email' LIMIT 1 "; 
 
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result); 
@@ -65,9 +75,9 @@ if(isset($_POST['appt'])){
 
  
    if (count($errors) == 0) {
-    $Password = md5($Password_1);
+    
 
-    $query = "INSERT INTO BonkaiApp (FirstName, LastName, UserName, Email) VALUES ('$FirstName', '$LastName','$UserName', '$Email',)";
+    $query = "INSERT INTO BonkaiAppt (FirstName, LastName, UserName, Email, Details, Date) VALUES ('$FirstName', '$LastName','$UserName', '$Email', '$Details', '$Date')";
     mysqli_query($db, $query);
 
 

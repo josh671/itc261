@@ -25,8 +25,8 @@
     </h3>
     <br> 
 <!-- position on left side -->
-    <p><a href="index.php?logout='1' ">Log out</p>
-    </div> 
+    <p><a href="index.php?logout='1' ">Log out</a></p>
+    
     <?php  endif     ?> 
 
 </div>
@@ -45,16 +45,15 @@ Videography, and Photography. Through these mediums, our goal is to provide  pro
 that is both satisfactory as well and experiential.</p>
             </div>
             <div class="home-container2">
-                <img class="jose-img" src="images/joseCastro2.jpg" alt="jose-castro">
+                <img class="jose-img" src="images/gallery/portraits/portrait3.jpg" alt="jose-castro">
             </div> 
 
             <div class="home-container1">
                 <h4>Check Out Our Social Media Platfroms</h4>
-                    <ul id="font-awesome">
-                                    <li id="instagram"><a href="// place url here "><i class="fab fa-instagram"></i></a></li>
-                                    <li id="facebook"><a href="// place url here "><i class="fab fa-facebook"></i></a></li>
-                                    <li id="facebook"><a href="// place url here "><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li id="facebook"><a href="// place url here "><i class="fab fa-youtube-square" aria-hidden="true"></i></a></li>
+                <ul id="font-awesome">
+                                    <li id="instagram"><a href="https://www.instagram.com/bonkaistudios  "><i class="fab fa-instagram"></i></a></li>
+                                    <li id="facebook"><a href="https://www.facebook.com/bonkaistudios "><i class="fab fa-facebook"></i></a></li>
+                                    <li id="facebook"><a href="https://www.youtube.com/channel/UCOAwYx0MqHP6x1za8Evq6Eg"><i class="fab fa-youtube-square" aria-hidden="true"></i></a></li>
                                 </ul>
             </div>
     </div>
@@ -115,10 +114,10 @@ that is both satisfactory as well and experiential.</p>
 </div>  <!--END VIDEO PLAYER-->  
 
 
-    <script type="text/javascript"> 
+    <script> 
     var videoPlayer=document.getElementById("videoPlayer"); 
     var myVideo = document.getElementById("myVideo"); 
-    var playBtn = document.getElementByClass("play-btn"); 
+    var playBtn = getElementsByClassName("play-btn"); 
 
     function playVideo(file) { 
         myVideo.src=file;

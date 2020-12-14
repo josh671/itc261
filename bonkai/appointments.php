@@ -6,8 +6,8 @@
 <div class="wrapper">
 <div id="appointment-intro">
 <h1><?php echo $mainHeadline; ?></h1>
-<p id='disclaimer'>"Please Note that the Names displayed are based on User Name. In order to view your appointment you must click on your <strong> User Name</strong>."</p>
-<p id='disclaimer'>"If you have not set an appointment, Please visit our <a href="setAppt.php">Click Here!</a></p>
+<p class='disclaimer'>"Please Note that the Names displayed are based on User Name. In order to view your appointment you must click on your <strong> User Name</strong>."</p>
+<p class='disclaimer'>"If you have not set an appointment, Please visit our <a href="setAppt.php">Click Here!</a></p>
 </div>
 
 
@@ -15,7 +15,7 @@
 <div class="setAppointments">
 <main>
 <?php
-$sql = 'SELECT * FROM BonkaiApp'; //select from sql people table in database
+$sql = 'SELECT * FROM BonkaiAppt'; //select from sql people table in database
 
 $iConn = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myerror( __File__, __LINE__, mysqli_connect_error())); 
 //we extract data here 
@@ -34,7 +34,7 @@ if(mysqli_num_rows($result) > 0){
 
                 echo '<tr>'; 
                     echo '<td><a href="appointments-view.php?id='.$row['UserID'].' ">'.$row['UserName'].' </a>';'</td>';
-                    echo '<td>'.$row['Details'].'</td>';
+                    echo '<td>'.$row['Date'].'</td>';
                 echo '</tr>';
     }//closing the while();
 
@@ -51,7 +51,7 @@ if(mysqli_num_rows($result) > 0){
 
 </main> 
 <aside> 
-<h3> This is my aside </h3> 
+<h3> Please note that all appointments are subject to change by videographer or photographer.</h3> 
 </aside> 
 
 </div><!--End of Appointments--> 
@@ -62,4 +62,4 @@ if(mysqli_num_rows($result) > 0){
 </div> <!--END WRAPPER-->     
 
 
-<?php include('./includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

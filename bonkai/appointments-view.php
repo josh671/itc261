@@ -11,7 +11,7 @@ if(isset($_GET['id'])) {
 
 } 
 
-$sql = 'SELECT * FROM BonkaiApp WHERE UserId = '.$id.''; 
+$sql = 'SELECT * FROM BonkaiAppt WHERE UserId = '.$id.''; 
 
 //connect to database 
 $iConn = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myerror(__File__, __LINE__, mysqli_connect_error())); 
@@ -41,15 +41,15 @@ if(mysqli_num_rows($result) > 0){
 <h1><?php echo $mainHeadline; ?></h1>
 
 <main> 
-    <h3>Welcome to <?php echo $FirstName; ?></h2> 
+    <h3>Welcome to <?php echo $FirstName; ?></h3> 
     <?php 
             if($Feedback == ''){ 
                 echo '<ul>';
-                    echo '<li><b>First Name: </b>'.$FirstName.'</li>';
-                    echo '<li><b>Last Name: </b></b>'.$LastName.'</li>';
-                    echo '<li><b>User Name: </b></b>'.$UserName.'</li>';
-                    echo '<li><b>Phone Number: </b></b>'.$PhoneNumber.'</li>';
-                    echo '<li><b>Email: </b></b>'.$Email.'</li>';
+                    echo '<li>First Name: '.$FirstName.'</li>';
+                    echo '<li>Last Name: '.$LastName.'</li>';
+                    echo '<li>User Name: '.$UserName.'</li>';
+                    echo '<li>Phone Number: '.$PhoneNumber.'</li>';
+                    echo '<li>Email: '.$Email.'</li>';
                     
                 echo '</ul>';
                 echo '<p>'.$Details.'</p>';

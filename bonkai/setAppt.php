@@ -28,6 +28,12 @@ include('./includes/header.php');
             <label>Email: </label> 
             <input type="text" name="Email" value="<?php if(isset($_POST['Email'])) echo  $_POST['Email']  ?>"> 
 
+            <label>Detail: </label> 
+            <textarea name="Details"><?php if(isset($_POST['Details']))  echo ($_POST['Details']);?></textarea>
+
+            <label>Date: </label> 
+            <input type="date" name="Date" value="<?php if(isset($_POST['Date'])) echo  $_POST['Date']  ?>"> 
+
             
             
             
@@ -40,4 +46,4 @@ include('./includes/header.php');
             </form>
 </div><!--end of appointment container--> 
 
-</div> 
+</div>  

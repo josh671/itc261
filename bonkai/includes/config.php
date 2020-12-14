@@ -15,36 +15,41 @@ switch(THIS_PAGE){
         $mainHeadline = 'Welcome to the Home of Bonkai';
         $center = 'center'; 
         $body = 'home'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/index.php";
     break; 
     case 'about.php': 
         $title='About Page'; 
         $mainHeadline = 'Welcome to our about page';
         $center = 'center'; 
         $body = 'about inner'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/about.php";
     break; 
     case 'daily.php': 
         $title='Daily Page'; 
         $mainHeadline = 'Here are our Seasonal Deals and Details';
         $center = 'center'; 
         $body = 'daily'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/daily.php";
     break; 
     case 'contact.php': 
         $title='Contact Page'; 
         $mainHeadline = 'Welcome to our contact page'; 
         $center = 'center'; 
         $body = 'contact'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/contact.php";
     break; 
     case 'gallery.php': 
         $title='Gallery Page'; 
         $mainHeadline = 'Welcome to the';
         $center = 'center'; 
         $body = 'gallery'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/gallery.php";
     break; 
     case 'thx.php': 
-        $title=''; 
-        $mainHeadline = '';
-        $center = ''; 
-        $body = ''; 
+        $title='thanks'; 
+        $mainHeadline = 'thanks';
+        $center = 'thanks'; 
+        $body = 'thanks'; 
     break; 
     case 'login.php': 
         $title='Bonkai Login'; 
@@ -63,6 +68,7 @@ switch(THIS_PAGE){
         $mainHeadline = 'Here are all set Appointments';
         $center = 'appointment'; 
         $body = 'appointment'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
     break; 
     
 }   //END OF SWITCH 
@@ -183,155 +189,7 @@ if($today =='Thursday'){
     $edits='10% Off Music video editting.';
     $reEdit='5% Off Music video re-edits.';
    
-};
-
-
-
-//variables 
-$name ='';
-$email ='';
-$amenities='';
-$bedroom ='';
-$comments='';
-$tel ='';
-$privacy='';
-
-$nameErr ='';
-$emailErr ='';
-$amenitiesErr ='';
-$bedroomErr ='';
-$commentsErr ='';
-$telErr ='';
-$privacyErr='';
-
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){ 
-
-
-//name if 
-if(empty($_POST['name'])){ 
-    $nameErr = 'Please fill out your Name';
-}else { 
-    $name = $_POST['name'];
-} //end name if 
-
-//email if 
-if(empty($_POST['email'])){ 
-    $emailErr = 'Please fill out your Email';
-}else { 
-    $email = $_POST['email'];
-} //end email if
-
-//bedroom if
-if(empty($_POST['bedroom'])){                                                                                                                                                        
-    $bedroomErr = 'Please check one.'; 
-}else{ 
-    $bedroom = $_POST['bedroom'];
 }
-//logic: if bedroom is equal to male than male is checked
-if($bedroom=='1-bedroom'){ 
-    $bedroom_first = 'checked'; //checked from form 
-}elseif($bedroom == '2-bedroom'){
-    $bedroom_second = 'checked'; 
-}elseif($bedroom == '3-bedroom'){
-    $bedroom_third = 'checked'; 
-}
-
-
-//amenities if 
-if(empty($_POST['amenities'])){ 
-    $amenitiesErr = 'Select your desired amenities';
-}else { 
-    $amenities = $_POST['amenities'];
-} //end email if
-
-//comments if
-if(empty($_POST['comments'])){
-    $commentsErr = 'Please fill out the comments.'; 
-}else{ 
-    $comments = $_POST['comments'];
-}//end comments if
-
-//privacy if
-if(empty($_POST['privacy'])){
-    $privacyErr = 'Please fill out agreement.'; 
-}else{ 
-    $privacy = $_POST['privacy'];
-} 
-
-//start of amenities function 
-function myAmenities(){ 
-    $myReturn = ''; 
-    if(!empty($_POST['amenities'])){
-        $myReturn = implode(', ', $_POST['amenities']);
-        return $myReturn;
-    }
-}
-
-//tel if 
-if(empty($_POST['tel'])) {  // if empty, type in your number
-    $telErr = 'Your phone number please!';
-} elseif(array_key_exists('tel', $_POST)){
-    if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['tel'])){ // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
-    $telErr = 'Invalid format!';
-} else{
-     $tel = $_POST['tel'];
-     }
-}
-
-//NEED TO SET UP YOUR ISSET FUNCTION TO SEND USING MAIL();
-if(isset($_POST['name'],
-             $_POST['email'],                           
-             $_POST['amenities'],
-             $_POST['bedroom'],
-             $_POST['comments'],
-             $_POST['tel'],
-             $_POST['privacy'])){ 
-                        //do something
-                        $to ="Joshua.Bordallo@seattlecolleges.edu"; //form contents will be sent to this email 
-                        $subject = 'test email' . date('m/d/y');  //whats being sent with date
-                        $body= ''.$name.' has completed your form.' .PHP_EOL. ''; //FIRST NAME HAS FILLED OUT YOUR FORM
-                        $body.= 'Email: '.$email.' '.PHP_EOL. ''; // displays in the body 
-                        $body.= 'Telephone: '.$tel.' '.PHP_EOL. '';
-                        $body.= 'The amenities you would like: '. myAmenities().' '.PHP_EOL. '';  
-                        $body .= 'Bedrooms needed: ' .$bedroom. ''; 
-                        $body .= '.  Here are your comments: '.$comments. ''; 
-                        
-                       
-
-                        $headers = array(
-                            'From' => 'HomeworkTest@seattlecollege.edu',
-                            'Reply-to' => ' '.$email.''
-
-                        );
-
-                        mail($to, $subject, $body, $headers); //mail function that sends the created local variables to the email at $to. 
-                        header('Location: thx.php'); //looks for thx.php file. 
-                        
-                       
-
-
-             }//END isset
-
-
-
-
-      
-
-    } //closing if $_SERVER  request
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
