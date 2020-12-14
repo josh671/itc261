@@ -27,7 +27,7 @@ if(mysqli_num_rows($result) > 0){
         $LastName= stripslashes($row['LastName']); 
         $Email= stripslashes($row['Email']); 
         $UserName= stripslashes($row['UserName']); 
-        $PhoneNumber = stripslashes($row['PhoneNumber']); 
+        $Date = stripslashes($row['Date']); 
         $Details = stripslashes($row['Details']); 
         $Feedback = '';
     }
@@ -49,6 +49,7 @@ if(mysqli_num_rows($result) > 0){
                     echo '<li>Last Name: '.$LastName.'</li>';
                     echo '<li>User Name: '.$UserName.'</li>';
                     echo '<li>Email: '.$Email.'</li>';
+                    echo '<li>Email: '.$Date.'</li>';
                     
                 echo '</ul>';
                 echo '<p>'.$Details.'</p>';
