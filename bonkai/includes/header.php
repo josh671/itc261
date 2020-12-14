@@ -11,7 +11,7 @@
 
 </head>
 <body class="<?php echo $body; ?>">
-<header class="<?php echo $body; ?>">
+<header class="<?php echo $center; ?>">
     <div class="inner-header">
         <nav> 
             <ul> 

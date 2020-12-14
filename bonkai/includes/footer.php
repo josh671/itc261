@@ -14,7 +14,7 @@
         <li>All Rights Reserved</li> 
         <li>Web Designs by Josh</li> 
         <li><a href='http://validator.w3.org/check?uri=<?php echo $htmlValid ?>'>HTML</a></li> 
-        <li><a href=''>CSS</a></li> 
+        <li><a href='<?php echo $cssValid ?>'>CSS</a></li> 
     </ul>
 </footer> 
 

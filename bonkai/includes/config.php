@@ -16,6 +16,7 @@ switch(THIS_PAGE){
         $center = 'center'; 
         $body = 'home'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/index.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/index.php";
     break; 
     case 'about.php': 
         $title='About Page'; 
@@ -23,6 +24,7 @@ switch(THIS_PAGE){
         $center = 'center'; 
         $body = 'about inner'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/about.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/about.php";
     break; 
     case 'daily.php': 
         $title='Daily Page'; 
@@ -30,6 +32,7 @@ switch(THIS_PAGE){
         $center = 'center'; 
         $body = 'daily'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/daily.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/daily.php";
     break; 
     case 'contact.php': 
         $title='Contact Page'; 
@@ -37,6 +40,7 @@ switch(THIS_PAGE){
         $center = 'center'; 
         $body = 'contact'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/contact.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/contact.php";
     break; 
     case 'gallery.php': 
         $title='Gallery Page'; 
@@ -44,24 +48,29 @@ switch(THIS_PAGE){
         $center = 'center'; 
         $body = 'gallery'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/gallery.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/gallery.php";
+        
     break; 
     case 'thx.php': 
         $title='thanks'; 
         $mainHeadline = 'thanks';
         $center = 'thanks'; 
         $body = 'thanks'; 
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/thx.php";
     break; 
     case 'login.php': 
         $title='Bonkai Login'; 
         $mainHeadline = 'Welcome Back! Please Login.';
         $center = 'login'; 
         $body = 'login'; 
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/login.php";
     break; 
     case 'register.php': 
         $title='Bonkai Registration'; 
         $mainHeadline = 'Please Register.';
-        $center = 'register'; 
+        $center = 'registering'; 
         $body = 'register'; 
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/register.php";
     break; 
     case 'appointments.php': 
         $title='Bonkai Appointments'; 
@@ -69,6 +78,7 @@ switch(THIS_PAGE){
         $center = 'appointment'; 
         $body = 'appointment'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
     break; 
     
 }   //END OF SWITCH 

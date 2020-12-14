@@ -6,16 +6,16 @@
 //variables 
 $name ='';
 $email ='';
-$amenities='';
-$bedroom ='';
+$shottype='';
+$projectType ='';
 $comments='';
 $tel ='';
 $privacy='';
 
 $nameErr ='';
 $emailErr ='';
-$amenitiesErr ='';
-$bedroomErr ='';
+$shottypeErr ='';
+$projectTypeErr ='';
 $commentsErr ='';
 $telErr ='';
 $privacyErr='';
@@ -39,27 +39,27 @@ if(empty($_POST['email'])){
     $email = $_POST['email'];
 } //end email if
 
-//bedroom if
-if(empty($_POST['bedroom'])){                                                                                                                                                        
-    $bedroomErr = 'Please check one.'; 
+//project type if
+if(empty($_POST['projectType'])){                                                                                                                                                        
+    $projectTypeErr = 'Please check one.'; 
 }else{ 
-    $bedroom = $_POST['bedroom'];
+    $projectType= $_POST['projectType'];
 }
-//logic: if bedroom is equal to male than male is checked
-if($bedroom=='1-bedroom'){ 
-    $bedroom_first = 'checked'; //checked from form 
-}elseif($bedroom == '2-bedroom'){
-    $bedroom_second = 'checked'; 
-}elseif($bedroom == '3-bedroom'){
-    $bedroom_third = 'checked'; 
+//logic: if project type is equal to male than male is checked
+if($projectType=='photos'){ 
+    $projectType_first = 'checked'; //checked from form 
+}elseif($projectType == 'vids'){
+    $projectType_second = 'checked'; 
+}elseif($projectType == 'both'){
+    $projectType_third = 'checked'; 
 }
 
 
 //amenities if 
-if(empty($_POST['amenities'])){ 
-    $amenitiesErr = 'Select your desired amenities';
+if(empty($_POST['shottype'])){ 
+    $shottypeErr = 'Select the types of shots';
 }else { 
-    $amenities = $_POST['amenities'];
+    $shottype = $_POST['shottype'];
 } //end email if
 
 //comments if
@@ -77,10 +77,10 @@ if(empty($_POST['privacy'])){
 } 
 
 //start of amenities function 
-function myAmenities(){ 
+function myshottype(){ 
     $myReturn = ''; 
-    if(!empty($_POST['amenities'])){
-        $myReturn = implode(', ', $_POST['amenities']);
+    if(!empty($_POST['shottype'])){
+        $myReturn = implode(', ', $_POST['shottype']);
         return $myReturn;
     }
 }
@@ -99,27 +99,27 @@ if(empty($_POST['tel'])) {  // if empty, type in your number
 //NEED TO SET UP YOUR ISSET FUNCTION TO SEND USING MAIL();
 if(isset($_POST['name'],
              $_POST['email'],                           
-             $_POST['amenities'],
-             $_POST['bedroom'],
+             $_POST['shottype'],
+             $_POST['projectType'],
              $_POST['comments'],
              $_POST['tel'],
              $_POST['privacy'])){ 
                         //do something
                               
-                        $to ="Joshua.Bordallo@seattlecolleges.edu"; //form contents will be sent to this email 
+                        $to ="olga.szemetylo@seattlecolleges.edu"; //form contents will be sent to this email 
                         $subject = 'test email' . date('m/d/y');  //whats being sent with date
                         $body= ''.$name.' has completed your form.' .PHP_EOL. ''; //FIRST NAME HAS FILLED OUT YOUR FORM
                         $body.= 'Email: '.$email.' '.PHP_EOL. ''; // displays in the body 
                         $body.= 'Telephone: '.$tel.' '.PHP_EOL. '';
-                        $body.= 'The amenities you would like: '. myAmenities().' '.PHP_EOL. '';  
-                        $body .= 'Bedrooms needed: ' .$bedroom. ''; 
+                        $body.= 'The types of shots: '. myshottype().' '.PHP_EOL. '';  
+                        $body .= 'Project Type: ' .$projectType. ''; 
                         $body .= '.  Here are your comments: '.$comments. ''; 
                         
                        
                        
 
                         $headers = array(
-                            'From' => 'HomeworkTest@seattlecollege.edu',
+                            'From' => 'josh.bordallo@seattlecollege.edu',
                             'Reply-to' => ' '.$email.''
 
                         );
@@ -153,59 +153,54 @@ if(isset($_POST['name'],
         <!--name -->
             <label>Name</label>
             <input class='field' type="text" name="name" value="<?php if(isset($_POST['name'])) echo htmlspecialchars($_POST['name']) ?>"> 
-            <span><?php echo $nameErr ?></span>
+            
         <!--email -->
             <label >email</label>
             <input class='field' type="text" name="email" value="<?php if(isset($_POST['email'])) echo htmlspecialchars($_POST['email']) ?>"> 
-            <span><?php echo $emailErr  ?></span>
 
         <!--phone -->
             <label >Telephone</label>
             <input class='field' type="tel" name="tel" value="<?php if(isset($_POST['tel'])) echo htmlspecialchars($_POST['tel']) ?>"> 
-            <span><?php echo $telErr?></span>
 
        <!--Bed rooms -->
        
-       <label>Bedrooms</label>
-       <span><?php echo $bedroomErr ?></span>
+       <label>Project Type</label>
        <ul>
-           <li><input type='radio' name='bedroom' value='1-bedroom' 
-           <?php  if(isset($_POST['bedroom']) && $_POST['bedroom'] == '1-bedroom') echo 'checked="checked" ';  ?>
-           >1 bedroom</li>
-           <li><input type='radio' name='bedroom' value='2-bedroom'
-           <?php  if(isset($_POST['bedroom']) && $_POST['bedroom'] == '2-bedroom') echo 'checked="checked" ';  ?>
-           >2 bedroom</li>
-           <li><input type='radio' name='bedroom' value='3-bedroom'
-           <?php  if(isset($_POST['bedroom']) && $_POST['bedroom'] == '3-bedroom') echo 'checked="checked" ';  ?>
-           >3 bedroom</li>
+           <li><input type='radio' name='projectType' value='photos' 
+           <?php  if(isset($_POST['projectType']) && $_POST['projectType'] == 'photo') echo 'checked="checked" ';  ?>
+           >Photos</li>
+           <li><input type='radio' name='projectType' value='vids'
+           <?php  if(isset($_POST['projectType']) && $_POST['projectType'] == 'vids') echo 'checked="checked" ';  ?>
+           >Videos</li>
+           <li><input type='radio' name='projectType' value='both'
+           <?php  if(isset($_POST['projectType']) && $_POST['projectType'] == 'both') echo 'checked="checked" ';  ?>
+           >Both</li>
        </ul>
 
         <!--amenities-->
             
-            <label>Amenities</label>
-            <span><?php echo $amenitiesErr ?></span>
+            <label>Types of Shots</label>
             <ul>
-                <li><input type='checkbox' name='amenities[]' value='washer'
-                <?php if(isset($_POST['amenities']) && $_POST['amenities'] == 'washer') echo 'checked="checked" ';  ?>
-                >Washer</li><!--Closing li-->
-                <li><input type='checkbox' name='amenities[]' value='dryer'
-                <?php if(isset($_POST['amenities']) && $_POST['amenities'] == 'dryer') echo 'checked="checked" ';  ?>
-                >Dryer</li><!--Closing li-->
-                <li><input type='checkbox' name='amenities[]' value='by-park'
-                <?php if(isset($_POST['amenities']) && $_POST['amenities'] == 'by-park') echo 'checked="checked" ';  ?>
-                >Close to Park</li><!--Closing li-->
-                <li><input type='checkbox' name='amenities[]' value='parking'
-                <?php if(isset($_POST['amenities']) && $_POST['amenities'] == 'parking') echo 'checked="checked" ';  ?>
-                >Parking</li><!--Closing li-->
-                <li><input type='checkbox' name='amenities[]' value='bicycle'
-                <?php if(isset($_POST['amenities']) && $_POST['amenities'] == 'bicycle') echo 'checked="checked" ';  ?>
-                >Bicycle Rack</li><!--Closing li-->
+                <li><input type='checkbox' name='shottype[]' value='family-pics'
+                <?php if(isset($_POST['shottype']) && $_POST['amenities'] == 'family-pics') echo 'checked="checked" ';  ?>
+                >Family pics</li><!--Closing li-->
+                <li><input type='checkbox' name='shottype[]' value='family-vids'
+                <?php if(isset($_POST['shottype']) && $_POST['amenities'] == 'family-vids') echo 'checked="checked" ';  ?>
+                >Family vids</li><!--Closing li-->
+                <li><input type='checkbox' name='shottype[]' value='social-media-pics'
+                <?php if(isset($_POST['shottype']) && $_POST['amenities'] == 'social-media-pics') echo 'checked="checked" ';  ?>
+                >Social Media Pics </li><!--Closing li-->
+                <li><input type='checkbox' name='shottype[]' value='social-media-ivds'
+                <?php if(isset($_POST['shottype']) && $_POST['amenities'] == 'social-media-ivds') echo 'checked="checked" ';  ?>
+                >Social Media Vids</li><!--Closing li-->
+                <li><input type='checkbox' name='shottype[]' value='both-vids-pics'
+                <?php if(isset($_POST['shottype']) && $_POST['shottype'] == 'both-vids-pics') echo 'checked="checked" ';  ?>
+                >Both vids and pics</li><!--Closing li-->
             </ul>
 
 
-            <label>Comments</label>
+            <label>Reason for contacting Us. </label>
             <textarea name="comments"><?php if(isset($_POST['comments']))  echo htmlspecialchars($_POST['comments']);?></textarea>
-            <span><?php echo $commentsErr;      ?></span>
 
             
             <input type='radio' name='privacy' value="<?php if(isset($_POST['privacy'])) echo htmlspecialchars($_POST['privacy']) ?>">
@@ -215,9 +210,16 @@ if(isset($_POST['name'],
             <input class="reset" type='submit' value='Send it'>
             <p class="reset box"><a href="">Reset me!!</a></p>
         </fieldset>
+        <div id="contact-errs">
+        <span><?php echo $nameErr ?></span>
+            <span><?php echo $emailErr  ?></span>
+            <span><?php echo $telErr?></span>
+            <span><?php echo $projectTypeErr ?></span>
+            <span><?php echo $shottypeErr ?></span>
+            <span><?php echo $commentsErr;      ?></span>
+        </div>
     </form> <!--END FORM--> 
-        
-
+    
     </aside>    
 </div>
 

@@ -42,9 +42,9 @@
                     friends, playing warzone, and shooting videos. Please check out my social media links below to know more about me.   </p>
            
                     <ul id="font-awesome">
-                                    <li id="instagram"><a href="https://www.instagram.com/bonkaistudios  "><i class="fab fa-instagram"></i></a></li>
-                                    <li id="facebook"><a href="https://www.facebook.com/bonkaistudios "><i class="fab fa-facebook"></i></a></li>
-                                    <li id="facebook"><a href="https://www.youtube.com/channel/UCOAwYx0MqHP6x1za8Evq6Eg"><i class="fab fa-youtube-square" aria-hidden="true"></i></a></li>
+                                    <li class="facebook"><a href="https://www.instagram.com/bonkaistudios  "><i class="fab fa-instagram"></i></a></li>
+                                    <li class="facebook"><a href="https://www.facebook.com/bonkaistudios "><i class="fab fa-facebook"></i></a></li>
+                                    <li class="facebook"><a href="https://www.youtube.com/channel/UCOAwYx0MqHP6x1za8Evq6Eg"><i class="fab fa-youtube-square" aria-hidden="true"></i></a></li>
                                 </ul>
                 </div>
             <div class="jose-container2">

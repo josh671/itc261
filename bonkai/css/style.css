@@ -276,7 +276,6 @@ video:focus {
 #gallery-background{ 
     background-image: url('../images/gallerybackground.png');
     background-position: center;
-    background-repeat: none;
     height: 75vh;
 }
 
@@ -332,7 +331,6 @@ video:focus {
     background: whitesmoke; 
     padding: 10px;
     width: 100%; 
-    overflow: none; 
     margin: 50px 0px 0px auto;
     text-align: center;
     
@@ -879,8 +877,7 @@ footer li{
     border-radius: 6px; 
    color: red;
     background: whitesmoke;
-    
-    margin: 5% auto; 
+    margin: 30px auto; 
     padding: 20px;
 } 
 
@@ -899,7 +896,15 @@ fieldset{
     border: none;
 } 
 
+.login p, .register p { 
+    color: white; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
 
+.login a, .register a{ 
+    color: white;
+}
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* START OF APPOINTMENTS INFORMATION */
@@ -923,7 +928,7 @@ fieldset{
      
     background: beige;
     padding: 20px; 
-    font-weight: 200px;
+    font-weight: 200;
 } 
 
 .disclaimer { 
@@ -1005,22 +1010,26 @@ table th{
 .contact main { 
     float: left; 
     display:block; 
-    width: 50%; 
+    width: 45%; 
     height: 200px; 
     margin-left: 100px;
     margin-top: 150px;
 }
 
 .contact form { 
-    width: 200px; 
+    width: 300px; 
     border: solid 1px black; 
     border-radius: 6px; 
     padding: 20px; 
     margin: 20px auto; 
     background: white; 
     display: block; 
-
 } 
+
+#contact-errs{ 
+    font-size: 15px; 
+    font-style: italic;
+}
 
 .contact p{ 
     line-height: 35px; 
@@ -1154,13 +1163,13 @@ table th{
 } 
 #thanks h1 { 
     margin-bottom: 20px; 
-    font-weight: 300px;
+    font-weight: 300;
 } 
 
 
 #thanks h2 { 
     margin-bottom: 20px; 
-    font-weight: 300px;
+    font-weight: 300;
 } 
 
 #thanks p{ 

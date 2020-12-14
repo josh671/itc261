@@ -33,7 +33,7 @@ include('./includes/header.php');
 
         </fieldset>
         </form>
-        <p>Already Registered?<a href="login.php">Login here:</a></p> 
+        <p>Already Registered?<a href="login.php"> Login here:</a></p> 
 
         <!-- Need to link to server 
             Need to set css for form 
