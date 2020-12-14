@@ -48,7 +48,6 @@ if(mysqli_num_rows($result) > 0){
                     echo '<li>First Name: '.$FirstName.'</li>';
                     echo '<li>Last Name: '.$LastName.'</li>';
                     echo '<li>User Name: '.$UserName.'</li>';
-                    echo '<li>Phone Number: '.$PhoneNumber.'</li>';
                     echo '<li>Email: '.$Email.'</li>';
                     
                 echo '</ul>';
