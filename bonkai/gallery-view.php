@@ -7,11 +7,11 @@ if(isset($_GET['id'])) {
 
 }   else    { 
 
-    header('Location: appointments.php');
+    //header('Location: gallery.php');
 
 } 
 
-$sql = 'SELECT * FROM BonkaiAppt WHERE UserId = '.$id.''; 
+$sql = 'SELECT * FROM BonkaiPic WHERE PicId = '.$id.''; 
 
 //connect to database 
 $iConn = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myerror(__File__, __LINE__, mysqli_connect_error())); 
@@ -23,17 +23,13 @@ $result = mysqli_query($iConn,$sql) or die(myerror(__File__, __LINE__, mysqli_er
 if(mysqli_num_rows($result) > 0){ 
     //show the records 
     while($row = mysqli_fetch_assoc($result)){ 
-        $FirstName = stripslashes($row['FirstName']); 
-        $LastName= stripslashes($row['LastName']); 
-        $Email= stripslashes($row['Email']); 
-        $UserName= stripslashes($row['UserName']); 
-        $Date=stripslashes($row['Date']); 
-        $Details = stripslashes($row['Details']); 
+        $PicName = stripslashes($row['PicName']); 
+        $PicDescription= stripslashes($row['PicDescription']); 
         $Feedback = '';
     }
 
 }else { 
-    $Feedback = 'sorry, no candidates';
+    $Feedback = 'sorry, no Pics';
 }//end if mysqli 
 
 ?>
@@ -45,15 +41,10 @@ if(mysqli_num_rows($result) > 0){
     <?php 
             if($Feedback == ''){ 
                 echo '<ul>';
-                    echo '<li>First Name: '.$FirstName.'</li>';
-                    echo '<li>Last Name: '.$LastName.'</li>';
-                    echo '<li>User Name: '.$UserName.'</li>';
-                    echo '<li>Email: '.$Email.'</li>';
-                    echo '<li>Date: '.$Date.'</li>';
-                    
-                echo '</ul>';
-                echo '<p>'.$Details.'</p>';
-                echo '<p><a href="./appointments.php">Go back to the appointments page!</a></p>';
+                    echo '<li>: '.$PicDescription.'</li>';
+                    echo '<li class="photoView"><img src="images/gallery/' .$PicName.'.jpg"></li>';
+                   
+                echo '<p><a href="gallery.php">Go Back to our main gallery?</a></p>';
 
             }   else    { 
                 echo $Feedback;

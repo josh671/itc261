@@ -38,7 +38,7 @@ if(isset($_POST['reg_user'])){
     }//end if
 
     if(empty($UserName)){ 
-        array_push($errors, 'Last Name is Required'); 
+        array_push($errors, 'User Name is Required'); 
     }//end if
 
     if(empty($Email)){ 
@@ -62,11 +62,11 @@ if(isset($_POST['reg_user'])){
 
     //Username email check 
     if($user){ 
-        if($user['$UserName'] == $UserName){ 
+        if($user['UserName'] == $UserName){ 
             array_push($errors, 'User Name already exists'); 
         }//end checkuser
 
-        if($user['$Email'] == $Email) { 
+        if($user['Email'] == $Email) { 
             array_push($errors, 'Email already exists'); 
         }
     }//end if user 

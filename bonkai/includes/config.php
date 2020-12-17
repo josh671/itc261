@@ -79,6 +79,14 @@ switch(THIS_PAGE){
         $body = 'appointment'; 
         $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
         $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
+    break;  
+    case 'special-gallery.php': 
+        $title='Special Photos'; 
+        $mainHeadline = 'Here are are special Photos';
+        $center = 'special-gallery'; 
+        $body = 'gallery-special'; 
+        $htmlValid="www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
+        $cssValid="http://jigsaw.w3.org/css-validator/validator?uri=www.webdevsbyjosh.com/itc261/finalProject/bonkai/appointments.php";
     break; 
     
 }   //END OF SWITCH 
@@ -89,6 +97,7 @@ $nav['about.php']='About';
 $nav['daily.php']='Daily'; 
 $nav['contact.php']='Contact'; 
 $nav['gallery.php']='Gallery'; 
+$nav['special-gallery.php']='Special Photos'; 
 $nav['appointments.php']='Appointments';
 
 

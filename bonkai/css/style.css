@@ -904,6 +904,10 @@ fieldset{
 
 .login a, .register a{ 
     color: white;
+} 
+
+.error p { 
+    color: red;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -1177,4 +1181,33 @@ table th{
     font-style: italic; 
     line-height:  15px;
     margin-bottom: 20px; 
+} 
+
+
+.special-img{ 
+    display: block; 
+    width: 600px; 
+    overflow: hidden; 
+    
+} 
+
+
+.special-img img{ 
+    display: block; 
+    width: 100%
+    
+
+} 
+
+.photoView { 
+    width: 300px; 
+    display: block; 
+    padding: 5px; 
+    background: black;
+} 
+
+.photoView img{ 
+    width: 100%;
+    display: block; 
+    
 }
